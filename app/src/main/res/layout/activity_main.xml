@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/tabHost"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    >
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TabWidget android:id="@android:id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TabWidget>
+
+    <FrameLayout android:id="@android:id/tabcontent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView android:id="@+id/restaurant"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/detail">
+        </ListView>
+
+        <TableLayout android:id="@+id/detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:shrinkColumns="1"
+            tools:context="dictionary.com.splittingthetap.MainActivity"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true">
+
+            <TableRow
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                >
+
+                <TextView
+                    android:text="Name "
+                    android:id="@+id/nameTextView"
+                    android:layout_weight="0.05"
+                    android:layout_height="match_parent"
+                    android:autoText="true"
+                    android:paddingTop="14dp"
+                    android:layout_width="70dp" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="textPersonName"
+                    android:hint="name "
+                    android:ems="10"
+                    android:id="@+id/nameTextField"
+                    android:layout_weight="0.52"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:weightSum="1">
+
+                <TextView
+                    android:text="Address"
+                    android:layout_height="match_parent"
+                    android:id="@+id/addressTextView"
+                    android:paddingTop="14dp"
+                    android:layout_width="76dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="address"
+                    android:ems="10"
+                    android:id="@+id/addressTextField" />
+            </TableRow>
+
+            <TableRow
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                >
+
+            </TableRow>
+            <TableRow android:layout_margin="20dp">
+
+                <TextView android:text="Type:"/>
+                <RadioGroup android:id="@+id/type">
+                    <RadioButton android:id="@+id/take_out"
+                        android:text="Take-Out"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true" />
+                    <RadioButton android:id="@+id/sit_down"
+                        android:text="Sit-Down"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <RadioButton android:id="@+id/delivery"
+                        android:text="Delivery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                </RadioGroup>
+            </TableRow>
+            <TableRow android:gravity="center_horizontal">
+                <Button android:id="@+id/save"
+                    android:text="Save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+        </TableLayout>
+    </FrameLayout>
+</LinearLayout>
+</TabHost>
